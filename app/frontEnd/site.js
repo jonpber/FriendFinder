@@ -74,16 +74,16 @@ $(function(){
 
 	function increaseQuestion(){
 		if (currentQuestion !== 10){
-			$("#q" + currentQuestion).closest(".questionDiv").hide("drop", {direction:"left"}, function(){
-				$("#q" + (currentQuestion + 1)).closest(".questionDiv").show("drop", {direction:"right"});
+			$("#q" + currentQuestion).closest(".questionDiv").hide("drop", {direction:"left", distance: 75}, function(){
+				$("#q" + (currentQuestion + 1)).closest(".questionDiv").show("drop", {direction:"right", distance: 75});
 				currentQuestion += 1;
 			});
 			
 		}
 
 		else {
-			$("#q10").closest(".questionDiv").hide("drop", {direction:"left"}, function(){
-				$(".surveySubmit").show("drop", {direction:"right"});
+			$("#q10").closest(".questionDiv").hide("drop", {direction:"left", distance: 75}, function(){
+				$(".surveySubmit").show("drop", {direction:"right", distance: 75});
 				currentQuestion += 1;
 			});
 		}
@@ -98,9 +98,9 @@ $(function(){
 	$(".glyphicon").on("click", function(){
 		console.log(currentQuestion);
 		if (currentQuestion !== 1 && currentQuestion < 11){
-			$("#q" + currentQuestion).closest(".questionDiv").hide("drop", {direction:"right"}, function(){
+			$("#q" + currentQuestion).closest(".questionDiv").hide("drop", {direction:"right", distance: 75}, function(){
 				$("#q1").val("Select Your Answer");
-				$("#q1").closest(".questionDiv").show("drop", {direction:"left"});
+				$("#q1").closest(".questionDiv").show("drop", {direction:"left", distance: 75});
 				currentQuestion = 1;
 				resetQuiz();
 			});
@@ -118,6 +118,7 @@ $(function(){
 
 	function resetQuiz(){
 		$(".quizSelect").val("Select Your Answer");
+		currentQuestion = 1;
 	}
 
 });
