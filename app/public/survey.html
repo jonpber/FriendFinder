@@ -2,117 +2,183 @@
 <html>
 <head>
 	<title>FriendFinder Survey</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One|Rubik+Mono+One|Squada+One|PT+Sans+Narrow" rel="stylesheet">
 </head>
 <body>
-	<h2>About You</h2>
-	<h4>Name (Required)</h4>
-	<input type="text" name="name">
-	<h4>Link to Photo Image (Required)</h4>
-	<input type="text" name="photoImg">
 
-	<hr>
-	<h2>Question 1</h2>
-	<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+	<h1>Friend-Finder+</h1>
 
-	<h2>Question 2</h2>
-	<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+	<div class="aboutYouDiv">
+		<h2>About You</h2>
+		<h4 class="quizInputs">Name (Required)</h4>
+		<input type="text" name="name" class="nameInput">
+		<h4 class="quizInputs">Link to Photo Image (Required)</h4>
+		<input type="text" name="photoImg" class="photoInput">
+	</div>
 
-	<h2>Question 3</h2>
-	<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+	<div class="questionsDivSmall container">
+		<form action="/api/friends" method="POST">
+			<a href="#">
+				<span class="glyphicon glyphicon-repeat"></span>
+			</a>
+			<div class="row">
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 1</h2>
+					<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+					<select class="quizSelect" id="q1">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+				
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 2</h2>
+					<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+					<select class="quizSelect" id="q2">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+	
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 3</h2>
+					<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+					<select class="quizSelect" id="q3">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<h2>Question 4</h2>
-	<h4>You rarely do something just out of sheer curiosity.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
 
-	<h2>Question 5</h2>
-	<h4>People can rarely upset you.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 4</h2>
+					<h4>You rarely do something just out of sheer curiosity.</h4>
+					<select class="quizSelect" id="q4">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<h2>Question 6</h2>
-	<h4>It is often difficult for you to relate to other people’s feelings.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 5</h2>
+					<h4>People can rarely upset you.</h4>
+					<select class="quizSelect" id="q5">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<h2>Question 7</h2>
-	<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 6</h2>
+					<h4>It is often difficult for you to relate to other people’s feelings.</h4>
+					<select class="quizSelect" id="q6">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<h2>Question 8</h2>
-	<h4>You rarely get carried away by fantasies and ideas.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 7</h2>
+					<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+					<select class="quizSelect" id="q7">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<h2>Question 9</h2>
-	<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 8</h2>
+					<h4>You rarely get carried away by fantasies and ideas.</h4>
+					<select class="quizSelect" id="q8">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<h2>Question 10</h2>
-	<h4>You feel more energetic after spending time with a group of people.</h4>
-	<select>
-		<option>1 (Strongly Disagree</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5 (Strongly Agree</option>
-	</select>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 9</h2>
+					<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+					<select class="quizSelect" id="q9">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
 
-	<br>
-	<br>
-	<button>Submit</button>
+				<div class="col-xs-12 questionDiv">
+					<h2 class="questionH2">Question 10</h2>
+					<h4>You feel more energetic after spending time with a group of people.</h4>
+					<select class="quizSelect" id="q10">
+						<option selected disabled>Select Your Answer</option>
+						<option>1 (Strongly Disagree)</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5 (Strongly Agree)</option>
+					</select>
+				</div>
+			</div>
+			<br>
+			<br>
+			<button class="surveySubmit">Submit</button>
+		</form>
+	</div>
+
+	<div class="modals">
+		<div class="modalContent">
+			<span class='close floatRight'>&times;</span>
+			<h2>Your best match is:</h2>
+			<h2 class="resultName">Name</h2>
+
+			<img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="displayPic" class="resultPic">
+
+			<br>
+			<button class="closeButton floatRight">Close</button>
+		</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="site.js"></script>
 </body>
 </html>
